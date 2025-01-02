@@ -1,0 +1,236 @@
+{
+  "blueprint": {
+    "icons": [
+      {
+        "signal": {
+          "name": "assembling-machine-3"
+        },
+        "index": 1
+      }
+    ],
+    "entities": [
+      {
+        "entity_number": 1,
+        "name": "assembling-machine-3",
+        "position": {
+          "x": -212.5,
+          "x": 0,
+          "y": 22.5
+        },
+        "recipe": "parameter-0",
+        "recipe_quality": "normal"
+      },
+      {
+        "entity_number": 2,
+        "name": "bulk-inserter",
+        "position": {
+          "x": -213.5,
+          "x": 1,
+          "y": 24.5
+        },
+        "direction": 8
+      },
+      {
+        "entity_number": 3,
+        "name": "bulk-inserter",
+        "position": {
+          "x": 0,
+          "y": 24.5
+        },
+        "control_behavior": {
+          "connect_to_logistic_network": true,
+          "logistic_condition": {
+            "first_signal": {
+              "name": "parameter-0"
+            },
+            "constant": 100,
+            "comparator": "<"
+          }
+        }
+      },
+      {
+        "entity_number": 4,
+        "name": "passive-provider-chest",
+        "position": {
+          "x": 0,
+          "y": 25.5
+        }
+      },
+      {
+        "entity_number": 5,
+        "name": "requester-chest",
+        "position": {
+          "x": 1,
+          "y": 25.5
+        },
+        "request_filters": {
+          "sections": [
+            {
+              "index": 1,
+              "filters": [
+                {
+                  "index": 1,
+                  "name": "parameter-1",
+                  "quality": "normal",
+                  "comparator": "=",
+                  "count": 11
+                },
+                {
+                  "index": 2,
+                  "name": "parameter-2",
+                  "quality": "normal",
+                  "comparator": "=",
+                  "count": 12
+                },
+                {
+                  "index": 3,
+                  "name": "parameter-3",
+                  "quality": "normal",
+                  "comparator": "=",
+                  "count": 13
+                },
+                {
+                  "index": 4,
+                  "name": "parameter-4",
+                  "quality": "normal",
+                  "comparator": "=",
+                  "count": 14
+                },
+                {
+                  "index": 5,
+                  "name": "parameter-5",
+                  "quality": "normal",
+                  "comparator": "=",
+                  "count": 15
+                },
+                {
+                  "index": 6,
+                  "name": "parameter-6",
+                  "quality": "normal",
+                  "comparator": "=",
+                  "count": 16
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "parameters": [
+      {
+        "type": "id",
+        "id": "parameter-0",
+        "name": "Item to make",
+        "quality-condition": {
+          "quality": "normal",
+          "comparator": "="
+        }
+      },
+      {
+        "type": "number",
+        "number": "2",
+        "name": "Number of desired stacks",
+        "variable": "desired_stacks"
+      },
+      {
+        "type": "number",
+        "number": "100",
+        "formula": "desired_stacks*p0_s",
+        "dependent": true
+      },
+      {
+        "type": "id",
+        "id": "parameter-1",
+        "quality-condition": {
+          "quality": "normal",
+          "comparator": "="
+        },
+        "ingredient-of": "parameter-0"
+      },
+      {
+        "type": "number",
+        "number": "11",
+        "formula": "p0_i1/p0_t*60",
+        "dependent": true
+      },
+      {
+        "type": "id",
+        "id": "parameter-2",
+        "quality-condition": {
+          "quality": "normal",
+          "comparator": "="
+        },
+        "ingredient-of": "parameter-0"
+      },
+      {
+        "type": "number",
+        "number": "12",
+        "formula": "p0_i2/p0_t*60",
+        "dependent": true
+      },
+      {
+        "type": "id",
+        "id": "parameter-3",
+        "quality-condition": {
+          "quality": "normal",
+          "comparator": "="
+        },
+        "ingredient-of": "parameter-0"
+      },
+      {
+        "type": "number",
+        "number": "13",
+        "formula": "p0_i3/p0_t*60",
+        "dependent": true
+      },
+      {
+        "type": "id",
+        "id": "parameter-4",
+        "quality-condition": {
+          "quality": "normal",
+          "comparator": "="
+        },
+        "ingredient-of": "parameter-0"
+      },
+      {
+        "type": "number",
+        "number": "14",
+        "formula": "p0_i4/p0_t*60",
+        "dependent": true
+      },
+      {
+        "type": "id",
+        "id": "parameter-5",
+        "quality-condition": {
+          "quality": "normal",
+          "comparator": "="
+        },
+        "ingredient-of": "parameter-0"
+      },
+      {
+        "type": "number",
+        "number": "15",
+        "formula": "p0_i5/p0_t*60",
+        "dependent": true
+      },
+      {
+        "type": "id",
+        "id": "parameter-6",
+        "quality-condition": {
+          "quality": "normal",
+          "comparator": "="
+        },
+        "ingredient-of": "parameter-0"
+      },
+      {
+        "type": "number",
+        "number": "16",
+        "formula": "p0_i6/p0_t*60",
+        "dependent": true
+      }
+    ],
+    "item": "blueprint",
+    "label": "Parametrized bot assembling machine",
+    "version": 562949955256321
+  }
+}
