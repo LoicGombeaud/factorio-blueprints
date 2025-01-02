@@ -58,28 +58,28 @@
                   "name": "parameter-1",
                   "quality": "normal",
                   "comparator": "=",
-                  "count": 1
+                  "count": 11
                 },
                 {
                   "index": 2,
                   "name": "parameter-2",
                   "quality": "normal",
                   "comparator": "=",
-                  "count": 0
+                  "count": 12
                 },
                 {
                   "index": 3,
                   "name": "parameter-3",
                   "quality": "normal",
                   "comparator": "=",
-                  "count": 2
+                  "count": 13
                 },
                 {
                   "index": 4,
                   "name": "parameter-4",
                   "quality": "normal",
                   "comparator": "=",
-                  "count": 3
+                  "count": 14
                 }
               ]
             }
@@ -169,19 +169,19 @@
       },
       {
         "type": "number",
-        "number": "1",
+        "number": "11",
         "formula": "p0_i1/p0_t*60",
         "dependent": true
       },
       {
         "type": "number",
-        "number": "2",
+        "number": "12",
         "formula": "p0_i2/p0_t*60",
         "dependent": true
       },
       {
         "type": "number",
-        "number": "3",
+        "number": "13",
         "formula": "p0_i3/p0_t*60",
         "dependent": true
       }
