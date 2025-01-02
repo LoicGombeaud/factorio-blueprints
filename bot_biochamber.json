@@ -1,0 +1,193 @@
+{
+  "blueprint": {
+    "icons": [
+      {
+        "signal": {
+          "name": "biochamber"
+        },
+        "index": 1
+      }
+    ],
+    "entities": [
+      {
+        "entity_number": 1,
+        "name": "biochamber",
+        "position": {
+          "x": 1,
+          "y": 0
+        },
+        "recipe": "parameter-0",
+        "recipe_quality": "normal"
+      },
+      {
+        "entity_number": 2,
+        "name": "bulk-inserter",
+        "position": {
+          "x": 0,
+          "y": 2
+        },
+        "direction": 8
+      },
+      {
+        "entity_number": 3,
+        "name": "requester-chest",
+        "position": {
+          "x": 0,
+          "y": 3
+        },
+        "request_filters": {
+          "sections": [
+            {
+              "index": 1,
+              "filters": [
+                {
+                  "index": 1,
+                  "name": "nutrients",
+                  "quality": "normal",
+                  "comparator": "=",
+                  "count": 100
+                }
+              ],
+              "group": "Biochamber nutrients"
+            },
+            {
+              "index": 2,
+              "filters": [
+                {
+                  "index": 1,
+                  "name": "parameter-1",
+                  "quality": "normal",
+                  "comparator": "=",
+                  "count": 1
+                },
+                {
+                  "index": 2,
+                  "name": "parameter-2",
+                  "quality": "normal",
+                  "comparator": "=",
+                  "count": 0
+                },
+                {
+                  "index": 3,
+                  "name": "parameter-3",
+                  "quality": "normal",
+                  "comparator": "=",
+                  "count": 2
+                },
+                {
+                  "index": 4,
+                  "name": "parameter-4",
+                  "quality": "normal",
+                  "comparator": "=",
+                  "count": 3
+                }
+              ]
+            }
+          ],
+          "trash_not_requested": true,
+          "request_from_buffers": true
+        }
+      },
+      {
+        "entity_number": 4,
+        "name": "passive-provider-chest",
+        "position": {
+          "x": 0,
+          "y": 3
+        }
+      },
+      {
+        "entity_number": 5,
+        "name": "bulk-inserter",
+        "position": {
+          "x": 0,
+          "y": 2
+        },
+        "control_behavior": {
+          "connect_to_logistic_network": true,
+          "logistic_condition": {
+            "first_signal": {
+              "name": "parameter-0"
+            },
+            "constant": 0,
+            "comparator": "<"
+          }
+        }
+      }
+    ],
+    "parameters": [
+      {
+        "type": "id",
+        "id": "parameter-0",
+        "quality-condition": {
+          "quality": "normal",
+          "comparator": "="
+        }
+      },
+      {
+        "type": "id",
+        "id": "parameter-1",
+        "quality-condition": {
+          "quality": "normal",
+          "comparator": "="
+        },
+        "ingredient-of": "parameter-0"
+      },
+      {
+        "type": "id",
+        "id": "parameter-2",
+        "quality-condition": {
+          "quality": "normal",
+          "comparator": "="
+        },
+        "ingredient-of": "parameter-0"
+      },
+      {
+        "type": "id",
+        "id": "parameter-3",
+        "quality-condition": {
+          "quality": "normal",
+          "comparator": "="
+        },
+        "ingredient-of": "parameter-0"
+      },
+      {
+        "type": "id",
+        "id": "parameter-4",
+        "quality-condition": {
+          "quality": "normal",
+          "comparator": "="
+        },
+        "ingredient-of": "parameter-0"
+      },
+      {
+        "type": "number",
+        "number": "0",
+        "name": "Quantity required",
+        "formula": "p0_s*2",
+        "dependent": true
+      },
+      {
+        "type": "number",
+        "number": "1",
+        "formula": "p0_i1/p0_t*60",
+        "dependent": true
+      },
+      {
+        "type": "number",
+        "number": "2",
+        "formula": "p0_i2/p0_t*60",
+        "dependent": true
+      },
+      {
+        "type": "number",
+        "number": "3",
+        "formula": "p0_i3/p0_t*60",
+        "dependent": true
+      }
+    ],
+    "item": "blueprint",
+    "label": "Parametrized biochamber",
+    "version": 562949955256321
+  }
+}
