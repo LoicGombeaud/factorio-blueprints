@@ -112,7 +112,9 @@
                 }
               ]
             }
-          ]
+          ],
+          "trash_not_requested": true,
+          "request_from_buffers": true
         }
       }
     ],
